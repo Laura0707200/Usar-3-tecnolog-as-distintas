@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Canva - Diseño Gráfico para Todos</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            background: linear-gradient(135deg, #00C4CC 0%, #7B2CBF 100%);
+            font-family: 'Arial', sans-serif;
+            padding: 20px;
+            min-height: 100vh;
+            color: white;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px;
+        }
+        
+        .header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+        
+        .header h1 {
+            color: white;
+            font-size: 3em;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+        
+        .header .subtitle {
+            font-size: 1.2em;
+            opacity: 0.9;
+        }
+        
+        .content-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+        
+        .content-card {
+            background: rgba(255,255,255,0.15);
+            backdrop-filter: blur(10px);
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: 0 8px 32px rgba(0,0,0,0.2);
+        }
+        
+        .content-card h2 {
+            color: #FFD700;
+            font-size: 1.8em;
+            margin-bottom: 20px;
+            border-bottom: 2px solid #FFD700;
+            padding-bottom: 10px;
+        }
+        
+        .content-card p {
+            line-height: 1.6;
+            margin-bottom: 15px;
+        }
+        
+        .content-card ul {
+            list-style: none;
+            padding-left: 0;
+        }
+        
+        .content-card li {
+            padding: 8px 0;
+            padding-left: 25px;
+            position: relative;
+        }
+        
+        .content-card li:before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: #00FF88;
+            font-weight: bold;
+        }
+        
+        .tutorial-section {
+            background: rgba(255,255,255,0.1);
+            border-radius: 15px;
+            padding: 40px;
+            margin: 40px 0;
+        }
+        
+        .tutorial-section h2 {
+            color: #FFD700;
+            text-align: center;
+            margin-bottom: 30px;
+            font-size: 2em;
+        }
+        
+        .steps {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin: 30px 0;
+        }
+        
+        .step {
+            background: rgba(255,255,255,0.1);
+            border-radius: 10px;
+            padding: 20px;
+            text-align: center;
+        }
+        
+        .step-number {
+            background: #7B2CBF;
+            color: white;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 15px;
+            font-weight: bold;
+            font-size: 1.2em;
+        }
+        
+        .images-gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin: 30px 0;
+        }
+        
+        .images-gallery img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+        }
+        
+        .navigation {
+            text-align: center;
+            margin-top: 40px;
+        }
+        
+        .nav-button {
+            background: linear-gradient(45deg, #7B2CBF, #00C4CC);
+            color: white;
+            padding: 12px 25px;
+            text-decoration: none;
+            border-radius: 25px;
+            margin: 0 10px;
+            transition: all 0.3s ease;
+            font-weight: bold;
+            display: inline-block;
+        }
+        
+        .nav-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(123, 44, 191, 0.4);
+        }
+        
+        @media (max-width: 768px) {
+            .container {
+                padding: 20px;
+            }
+            
+            .header h1 {
+                font-size: 2em;
+            }
+            
+            .content-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🎨 CANVA</h1>
+            <p class="subtitle">Diseño gráfico profesional al alcance de todos</p>
+        </div>
+        
+        <div class="content-grid">
+            <div class="content-card">
+                <h2>¿Qué es Canva?</h2>
+                <p>Canva es una plataforma de diseño gráfico en línea fundada en 2012 por Melanie Perkins, Cliff Obrecht y Cameron Adams en Australia. Es una herramienta que democratiza el diseño, permitiendo a cualquier persona crear contenido visual profesional sin necesidad de conocimientos técnicos avanzados en diseño gráfico.</p>
+                <p>La plataforma utiliza un sistema de arrastrar y soltar, con miles de plantillas prediseñadas, elementos gráficos, fuentes y fotografías que facilitan el proceso creativo.</p>
+            </div>
+            
+            <div class="content-card">
+                <h2>¿Para qué sirve?</h2>
+                <ul>
+                    <li>Crear presentaciones profesionales</li>
+                    <li>Diseñar posts para redes sociales</li>
+                    <li>Elaborar infografías y pósters</li>
+                    <li>Hacer logos y tarjetas de presentación</li>
+                    <li>Crear contenido para marketing digital</li>
+                    <li>Diseñar invitaciones y folletos</li>
+                    <li>Desarrollar material educativo</li>
+                    <li>Crear videos y animaciones simples</li>
+                </ul>
+            </div>
+            
+            <div class="content-card">
+                <h2>¿Quién creó Canva?</h2>
+                <p><strong>Melanie Perkins</strong> es la CEO y cofundadora principal de Canva. La idea surgió cuando era estudiante y se frustró con la complejidad de los programas de diseño tradicionales como Photoshop.</p>
+                <p>Junto con <strong>Cliff Obrecht</strong> (su pareja) y <strong>Cameron Adams</strong> (ex-diseñador de Google), lanzaron Canva en 2013 después de años de rechazos de inversionistas.</p>
+                <p>Hoy, Canva está valorada en más de $40 mil millones de dólares y tiene más de 100 millones de usuarios activos mensuales.</p>
+            </div>
+            
+            <div class="content-card">
+                <h2>Impacto en la Comunidad Digital</h2>
+                <p>Canva ha revolucionado el mundo del diseño gráfico al:</p>
+                <ul>
+                    <li>Democratizar el diseño profesional</li>
+                    <li>Empoderar a pequeñas empresas y emprendedores</li>
+                    <li>Facilitar la educación visual</li>
+                    <li>Crear empleos en la economía creativa</li>
+                    <li>Fomentar la inclusión digital</li>
+                    <li>Apoyar organizaciones sin fines de lucro</li>
+                </ul>
+            </div>
+            
+            <div class="content-card">
+                <h2>¿Qué diferencia a Canva?</h2>
+                <ul>
+                    <li><strong>Simplicidad:</strong> Interfaz intuitiva vs. complejidad de Photoshop</li>
+                    <li><strong>Colaboración:</strong> Trabajo en equipo en tiempo real</li>
+                    <li><strong>Plantillas:</strong> Miles de diseños predefinidos</li>
+                    <li><strong>Accesibilidad:</strong> Funciona en navegador, no requiere instalación</li>
+                    <li><strong>Precio:</strong> Versión gratuita robusta</li>
+                    <li><strong>Integración:</strong> Se conecta con múltiples plataformas</li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="tutorial-section">
+            <h2>🚀 Cómo utilizar Canva</h2>
+            
+            <div class="steps">
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <h3>Registro</h3>
+                    <p>Ve a canva.com y crea tu cuenta gratuita con email, Google o Facebook</p>
+                </div>
+                
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <h3>Seleccionar formato</h3>
+                    <p>Elige el tipo de diseño: post de Instagram, presentación, logo, etc.</p>
+                </div>
+                
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <h3>Elegir plantilla</h3>
+                    <p>Busca entre miles de plantillas profesionales o empieza desde cero</p>
+                </div>
+                
+                <div class="step">
+                    <div class="step-number">4</div>
+                    <h3>Personalizar</h3>
+                    <p>Edita textos, cambia colores, añade imágenes y elementos gráficos</p>
+                </div>
+                
+                <div class="step">
+                    <div class="step-number">5</div>
+                    <h3>Descargar/Compartir</h3>
+                    <p>Descarga en diferentes formatos o comparte directamente en redes sociales</p>
+                </div>
+            </div>
+            
+            <div class="images-gallery">
+                <img src="https://images.unsplash.com/photo-1611224923853-80b023f02d71?w=300&h=200&fit=crop" alt="Interfaz de Canva">
+                <img src="https://images.unsplash.com/photo-1586717791821-3f44a563fa4c?w=300&h=200&fit=crop" alt="Plantillas de Canva">
+                <img src="https://images.unsplash.com/photo-1542744173-8e7e53415bb0?w=300&h=200&fit=crop" alt="Diseños en Canva">
+                <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=300&h=200&fit=crop" alt="Herramientas de Canva">
+            </div>
+        </div>
+        
+        <div class="navigation">
+            <a href="index.html" class="nav-button">🏠 Inicio</a>
+            <a href="mentimeter.html" class="nav-button">📊 Mentimeter</a>
+            <a href="genially.html" class="nav-button">✨ Genially</a>
+        </div>
+    </div>
+</body>
+</html>

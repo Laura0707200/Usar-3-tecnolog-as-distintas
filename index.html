@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cómo utilizar 3 aplicaciones tecnológicas</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            background-color: #1e3a8a;
+            font-family: 'Arial', sans-serif;
+            padding: 20px;
+            min-height: 100vh;
+        }
+        
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            background-color: #1e3a8a;
+            padding: 40px;
+        }
+        
+        h1 {
+            color: white;
+            text-align: center;
+            margin-bottom: 30px;
+            font-size: 2.5em;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+        }
+        
+        .project-description {
+            color: #8b5cf6;
+            font-size: 1.1em;
+            line-height: 1.8;
+            margin-bottom: 40px;
+            text-align: justify;
+            padding: 20px;
+            background-color: rgba(255,255,255,0.1);
+            border-radius: 10px;
+        }
+        
+        .applications-list {
+            margin: 40px 0;
+            padding: 20px;
+            background-color: rgba(255,255,255,0.1);
+            border-radius: 10px;
+        }
+        
+        .applications-list h2 {
+            color: white;
+            margin-bottom: 20px;
+            font-size: 1.5em;
+        }
+        
+        .applications-list ul {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .applications-list li {
+            margin: 15px 0;
+            padding-left: 30px;
+            position: relative;
+        }
+        
+        .applications-list li:before {
+            content: "▶";
+            position: absolute;
+            left: 0;
+            color: #8b5cf6;
+            font-size: 1.2em;
+        }
+        
+        .applications-list a {
+            color: #60a5fa;
+            text-decoration: none;
+            font-size: 1.1em;
+            transition: color 0.3s ease;
+        }
+        
+        .applications-list a:hover {
+            color: #93c5fd;
+            text-decoration: underline;
+        }
+        
+        .main-image {
+            text-align: center;
+            margin: 40px 0;
+        }
+        
+        .main-image img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+        }
+        
+        .navigation {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 40px;
+            flex-wrap: wrap;
+        }
+        
+        .nav-button {
+            background: linear-gradient(45deg, #8b5cf6, #6366f1);
+            color: white;
+            padding: 12px 25px;
+            text-decoration: none;
+            border-radius: 25px;
+            transition: all 0.3s ease;
+            font-weight: bold;
+        }
+        
+        .nav-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(139, 92, 246, 0.4);
+        }
+        
+        @media (max-width: 768px) {
+            .container {
+                padding: 20px;
+            }
+            
+            h1 {
+                font-size: 2em;
+            }
+            
+            .navigation {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Cómo utilizar 3 aplicaciones tecnológicas</h1>
+        
+        <div class="project-description">
+            <p>En la era digital actual, el dominio de herramientas tecnológicas se ha vuelto fundamental para el desarrollo profesional y personal. Este proyecto tiene como objetivo explorar y explicar el uso de tres aplicaciones revolucionarias que han transformado la manera en que creamos, presentamos y compartimos contenido digital. A través de esta investigación, descubriremos cómo Canva ha democratizado el diseño gráfico, cómo Mentimeter ha revolucionado las presentaciones interactivas, y cómo Genially ha llevado el contenido visual a un nuevo nivel de interactividad. Estas herramientas no solo facilitan la creación de contenido profesional, sino que también potencian la creatividad y mejoran la comunicación en diversos ámbitos educativos y profesionales.</p>
+        </div>
+        
+        <div class="applications-list">
+            <h2>Aplicaciones a explorar:</h2>
+            <ul>
+                <li><a href="canva.html">🎨 Canva - Plataforma de diseño gráfico intuitiva</a></li>
+                <li><a href="mentimeter.html">📊 Mentimeter - Herramienta de presentaciones interactivas</a></li>
+                <li><a href="genially.html">✨ Genially - Creador de contenido visual interactivo</a></li>
+            </ul>
+        </div>
+        
+        <div class="main-image">
+            <img src="https://images.unsplash.com/photo-1611224923853-80b023f02d71?w=800&h=400&fit=crop&crop=center" alt="Tres aplicaciones tecnológicas: Canva, Mentimeter y Genially" style="width: 100%; max-width: 800px;">
+        </div>
+        
+        <div class="navigation">
+            <a href="canva.html" class="nav-button">Explorar Canva</a>
+            <a href="mentimeter.html" class="nav-button">Descubrir Mentimeter</a>
+            <a href="genially.html" class="nav-button">Conocer Genially</a>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mentimeter - Presentaciones Interactivas</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+            font-family: 'Arial', sans-serif;
+            padding: 20px;
+            min-height: 100vh;
+            color: #1a202c;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px;
+        }
+        
+        .header {
+            text-align: center;
+            margin-bottom: 50px;
+            background: white;
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+        
+        .header h1 {
+            color: #2d3748;
+            font-size: 3em;
+            margin-bottom: 10px;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+        }
+        
+        .header .subtitle {
+            font-size: 1.2em;
+            color: #4a5568;
+        }
+        
+        .content-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+        
+        .content-card {
+            background: white;
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+            border-left: 5px solid #4299e1;
+        }
+        
+        .content-card h2 {
+            color: #2b6cb0;
+            font-size: 1.8em;
+            margin-bottom: 20px;
+            border-bottom: 2px solid #bee3f8;
+            padding-bottom: 10px;
+        }
+        
+        .content-card p {
+            line-height: 1.6;
+            margin-bottom: 15px;
+            color: #2d3748;
+        }
+        
+        .content-card ul {
+            list-style: none;
+            padding-left: 0;
+        }
+        
+        .content-card li {
+            padding: 8px 0;
+            padding-left: 25px;
+            position: relative;
+            color: #2d3748;
+        }
+        
+        .content-card li:before {
+            content: "▶";
+            position: absolute;
+            left: 0;
+            color: #4299e1;
+            font-weight: bold;
+        }
+        
+        .tutorial-section {
+            background: white;
+            border-radius: 15px;
+            padding: 40px;
+            margin: 40px 0;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+        }
+        
+        .tutorial-section h2 {
+            color: #2b6cb0;
+            text-align: center;
+            margin-bottom: 30px;
+            font-size: 2em;
+        }
+        
+        .wordcloud-tutorial {
+            background: linear-gradient(135deg, #ebf8ff 0%, #bee3f8 100%);
+            border-radius: 15px;
+            padding: 40px;
+            margin: 40px 0;
+            border: 2px solid #4299e1;
+        }
+        
+        .wordcloud-tutorial h2 {
+            color: #1a365d;
+            text-align: center;
+            margin-bottom: 30px;
+            font-size: 2.2em;
+        }
+        
+        .steps {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+            margin: 30px 0;
+        }
+        
+        .step {
+            background: white;
+            border-radius: 10px;
+            padding: 25px;
+            text-align: center;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            border-top: 4px solid #4299e1;
+        }
+        
+        .step-number {
+            background: #4299e1;
+            color: white;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 15px;
+            font-weight: bold;
+            font-size: 1.2em;
+        }
+        
+        .step h3 {
+            color: #2b6cb0;
+            margin-bottom: 10px;
+        }
+        
+        .step p {
+            color: #4a5568;
+            font-size: 0.95em;
+        }
+        
+        .images-gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin: 30px 0;
+        }
+        
+        .images-gallery img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+        
+        .highlight-box {
+            background: #f7fafc;
+            border: 2px solid #4299e1;
+            border-radius: 10px;
+            padding: 20px;
+            margin: 20px 0;
+        }
+        
+        .highlight-box h3 {
+            color: #2b6cb0;
+            margin-bottom: 10px;
+        }
+        
+        .navigation {
+            text-align: center;
+            margin-top: 40px;
+        }
+        
+        .nav-button {
+            background: linear-gradient(45deg, #4299e1, #63b3ed);
+            color: white;
+            padding: 12px 25px;
+            text-decoration: none;
+            border-radius: 25px;
+            margin: 0 10px;
+            transition: all 0.3s ease;
+            font-weight: bold;
+            display: inline-block;
+        }
+        
+        .nav-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(66, 153, 225, 0.4);
+        }
+        
+        @media (max-width: 768px) {
+            .container {
+                padding: 20px;
+            }
+            
+            .header h1 {
+                font-size: 2em;
+            }
+            
+            .content-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>📊 MENTIMETER</h1>
+            <p class="subtitle">Transforma tus presentaciones en experiencias interactivas</p>
+        </div>
+        
+        <div class="content-grid">
+            <div class="content-card">
+                <h2>¿Qué es Mentimeter?</h2>
+                <p>Mentimeter es una plataforma de presentaciones interactivas fundada en 2014 en Estocolmo, Suecia, por Johnny Warström y Martin Carlsson. Esta herramienta revoluciona la forma tradicional de presentar al permitir que la audiencia participe activamente en tiempo real.</p>
+                <p>La plataforma utiliza tecnología web para conectar al presentador con su audiencia a través de dispositivos móviles, creando una experiencia bidireccional que mantiene el engagement y mejora la comprensión del contenido.</p>
+            </div>
+            
+            <div class="content-card">
+                <h2>¿Para qué sirve?</h2>
+                <ul>
+                    <li>Crear encuestas en tiempo real</li>
+                    <li>Generar nubes de palabras interactivas</li>
+                    <li>Realizar votaciones y rankings</li>
+                    <li>Hacer preguntas y respuestas (Q&A)</li>
+                    <li>Crear quizzes educativos</li>
+                    <li>Recopilar feedback instantáneo</li>
+                    <li>Romper el hielo en eventos</li>
+                    <li>Evaluar conocimientos previos</li>
+                </ul>
+            </div>
+            
+            <div class="content-card">
+                <h2>¿Quién creó Mentimeter?</h2>
+                <p><strong>Johnny Warström</strong> (CEO) y <strong>Martin Carlsson</strong> (CTO) fundaron Mentimeter en 2014 después de experimentar la frustración de presentaciones aburridas y unidireccionales durante sus estudios universitarios.</p>
+                <p>La empresa sueca ha crecido exponentially, siendo utilizada por más de 200 millones de personas en todo el mundo, incluyendo universidades como Harvard, empresas como Microsoft, y organizaciones como las Naciones Unidas.</p>
+            </div>
+            
+            <div class="content-card">
+                <h2>Impacto en la Educación</h2>
+                <p>Mentimeter ha transformado el panorama educativo al:</p>
+                <ul>
+                    <li>Aumentar la participación estudiantil</li>
+                    <li>Facilitar el aprendizaje activo</li>
+                    <li>Proporcionar feedback inmediato</li>
+                    <li>Crear ambientes inclusivos de aprendizaje</li>
+                    <li>Mejorar la retención de información</li>
+                    <li>Democratizar la participación en clase</li>
+                </ul>
+            </div>
+            
+            <div class="content-card">
+                <h2>Ventajas Competitivas</h2>
+                <ul>
+                    <li><strong>Facilidad de uso:</strong> No requiere apps, funciona en navegador</li>
+                    <li><strong>Tiempo real:</strong> Resultados instantáneos y visuales</li>
+                    <li><strong>Variedad:</strong> Múltiples tipos de interacciones</li>
+                    <li><strong>Escalabilidad:</strong> Desde 5 hasta 5000+ participantes</li>
+                    <li><strong>Integración:</strong> Compatible con PowerPoint, Zoom, Teams</li>
+                    <li><strong>Analytics:</strong> Reportes detallados de participación</li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="wordcloud-tutorial">
+            <h2>☁️ Cómo crear una Nube de Palabras en Mentimeter</h2>
+            
+            <div class="highlight-box">
+                <h3>¿Qué es una Nube de Palabras?</h3>
+                <p>Una nube de palabras es una representación visual donde las palabras más mencionadas por los participantes aparecen en mayor tamaño, creando un mapa visual de las respuestas más populares.</p>
+            </div>
+            
+            <div class="steps">
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <h3>Acceder a Mentimeter</h3>
+                    <p>Ve a <strong>mentimeter.com</strong> y crea tu cuenta gratuita. Inicia sesión y haz clic en "Create presentation"</p>
+                </div>
+                
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <h3>Seleccionar Word Cloud</h3>
+                    <p>En el menú de tipos de preguntas, selecciona <strong>"Word Cloud"</strong> (Nube de Palabras)</p>
+                </div>
+                
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <h3>Escribir la Pregunta</h3>
+                    <p>Escribe tu pregunta en el campo principal. Ejemplo: "¿Qué palabra describe mejor tu experiencia hoy?"</p>
+                </div>
+                
+                <div class="step">
+                    <div class="step-number">4</div>
+                    <h3>Configurar Opciones</h3>
+                    <p>Ajusta el número máximo de palabras por respuesta, activa/desactiva palabras duplicadas y configura la moderación</p>
+                </div>
+                
+                <div class="step">
+                    <div class="step-number">5</div>
+                    <h3>Personalizar Diseño</h3>
+                    <p>Elige colores, fuentes y el diseño de tu nube de palabras desde la pestaña "Customize"</p>
+                </div>
+                
+                <div class="step">
+                    <div class="step-number">6</div>
+                    <h3>Presentar</h3>
+                    <p>Haz clic en "Present" y comparte el código con tu audiencia. Verás la nube formarse en tiempo real</p>
+                </div>
+                
+                <div class="step">
+                    <div class="step-number">7</div>
+                    <h3>Analizar Resultados</h3>
+                    <p>Después de la presentación, revisa los resultados detallados y exporta los datos si es necesario</p>
+                </div>
+            </div>
+            
+            <div class="highlight-box">
+                <h3>💡 Consejos para Nubes de Palabras Efectivas:</h3>
+                <ul>
+                    <li>Haz preguntas abiertas y específicas</li>
+                    <li>Limita a 1-2 palabras por respuesta</li>
+                    <li>Usa la moderación para filtrar contenido inapropiado</li>
+                    <li>Permite tiempo suficiente para que todos participen</li>
+                    <li>Interpreta los resultados con tu audiencia</li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="tutorial-section">
+            <h2>🚀 Guía Rápida de Uso General</h2>
+            
+            <div class="steps">
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <h3>Registro</h3>
+                    <p>Crea tu cuenta gratuita en mentimeter.com</p>
+                </div>
+                
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <h3>Crear Presentación</h3>
+                    <p>Haz clic en "Create presentation" y añade tus preguntas</p>
+                </div>
+                
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <h3>Configurar</h3>
+                    <p>Personaliza colores, tipos de pregunta y opciones avanzadas</p>
+                </div>
+                
+                <div class="step">
+                    <div class="step-number">4</div>
+                    <h3>Presentar</h3>
+                    <p>Comparte el código con tu audiencia y presenta en tiempo real</p>
+                </div>
+            </div>
+            
+            <div class="images-gallery">
+                <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?w=300&h=200&fit=crop" alt="Presentación interactiva">
+                <img src="https://images.unsplash.com/photo-1531482615713-2afd69097998?w=300&h=200&fit=crop" alt="Audiencia participando">
+                <img src="https://images.unsplash.com/photo-1559136555-9303baea8ebd?w=300&h=200&fit=crop" alt="Nube de palabras">
+                <img src="https://images.unsplash.com/photo-1434030216411-0b793f4b4173?w=300&h=200&fit=crop" alt="Resultados en tiempo real">
+            </div>
+        </div>
+        
+        <div class="navigation">
+            <a href="index.html" class="nav-button">🏠 Inicio</a>
+            <a href="canva.html" class="nav-button">🎨 Canva</a>
+            <a href="genially.html" class="nav-button">✨ Genially</a>
+        </div>
+    </div>
+</body>
+</html>
